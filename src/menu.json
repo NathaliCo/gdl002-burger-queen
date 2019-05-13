@@ -1,0 +1,94 @@
+
+{
+    "menu":[{
+    "breakfast": [{
+            "description": "Café americano",
+            "price": "$5", 
+            "type":  "drink"
+        },
+        {
+            "description": "Café con leche",
+            "price": "$7",
+            "type":  "drink"  
+        },
+        {
+            "description": "Jugo de frutas natural",
+            "price": "$7",
+            "type":  "drink"
+        },
+        
+        {
+            "description": "Sandwich de jamón y queso",
+            "price": "$10",
+            "type":  "food"  
+        }]
+    }, {
+    "meal":[{
+        
+            
+                "description": "Hamburguesa simple",
+                "price": "$10",
+                "type":  "hamburger"     
+                
+            },
+            {
+                "description": "Hamburguesa doble",
+                "price": "$15",
+                "type":  "hamburger"   
+            },
+        
+            {
+                "description": "Papas fritas",
+                "price": "$5",
+                "type":  "extra"    
+            },
+            {
+                "description": "Aros de cebolla",
+                "price": "$7",
+                "type":  "extra"    
+            },
+    
+        
+        
+            {
+                "description": "Agua 500ml",
+                "price": "$5",
+                "type":  "drinks"     
+            },
+            {
+                "description": "Agua 750ml",
+                "price": "$7",
+                "type":  "drinks"       
+            },
+            {
+                "description": "Bebida/gaseosa 500ml",
+                "price": "$7",
+                "type":  "drinks"       
+            },
+            {
+                "description": "Bebida/gaseosa 750ml",
+                "price": "$10",
+                "type":  "drinks"       
+            }
+        
+    ]
+    }, {
+        "waiter":[{
+            "name": "Waiter 1"
+            
+            
+        },
+        {
+            "name": "Waiter 2"
+             
+        },
+    
+        {
+            "name": "Waiter 3"
+              
+        }
+    
+]
+    }
+    ]
+}
