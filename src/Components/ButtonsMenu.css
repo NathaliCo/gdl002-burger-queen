@@ -11,12 +11,15 @@ justify-content: center;
     background:rgba(40, 107, 136, 1);
 }
 
-.BreakfastMenu button{
+.buttonBreakfast{
     display: inline-block;
-    background: white;
+    background: white !important;
 }
 
-.MealMenu button{
+
+.buttonMeal{
     display: inline-block;
-    background: white;
+    background: white !important;
 }
+
+

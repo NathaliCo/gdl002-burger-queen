@@ -1,26 +1,30 @@
-
+ 
 {
     "menu":[{
     "breakfast": [{
             "description": "Café americano",
             "price": "$5", 
-            "type":  "drink"
+            "type":  "drink",
+            "plus": 1
         },
         {
             "description": "Café con leche",
             "price": "$7",
-            "type":  "drink"  
+            "type":  "drink" , 
+            "plus": 1
         },
         {
             "description": "Jugo de frutas natural",
             "price": "$7",
-            "type":  "drink"
+            "type":  "drink",
+            "plus": 1
         },
         
         {
             "description": "Sandwich de jamón y queso",
             "price": "$10",
-            "type":  "food"  
+            "type":  "food" ,
+            "plus": 1 
         }]
     }, {
     "meal":[{

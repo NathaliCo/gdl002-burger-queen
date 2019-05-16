@@ -1,44 +1,25 @@
 import React from 'react';
+import {BrowserRouter, Route} from 'react-router-dom'
 import './App.css';
 import  Header from './Components/Header';
-import  ButtonMenuBreakfast from './Components/ButtonMenuBreakfast';
-import  ButtonMenuMeal from './Components/ButtonMenuMeal';
-import  ButtonWaiter from './Components/ButtonWaiter';
-import  Command from './Components/Command';
-import  ClientName from './Components/ClientName';
+import WaiterPage from './Components/waiterPage';
+import ChefPage from './Components/ChefPage';
 
-
-// import  ButtonMenu from './Components/ButtonMenu';
+// import { FirebaseDatabaseProvider } from "@react-firebase/database";
+// import { FirestoreProvider } from "@react-firebase/firestore";
 
 
 
 function App() {
   return (
-    <div>
+    <BrowserRouter>
+    
     <Header />
-    <div className = "section group">
-    <div className = "col span_1_of_2">
-    <ButtonMenuBreakfast />
-     <ButtonMenuMeal />
-    </div>
-    <div className = "col span_1_of_2">
-    <Command />
-    <ClientName />
-    <div >
-      
-    
-    </div>
-    <button>Send command to chef</button>
-    
-    <button>Command states</button>
-    </div>
-    </div>
-    </div>
-    
-  );
-  
+    <Route exact path= '/' component = {WaiterPage}/>
+    <Route path = '/chef' component = {ChefPage}/>
+    </BrowserRouter>
+  ); 
 }
-
 
 export default App;
 
