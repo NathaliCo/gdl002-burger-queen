@@ -5,26 +5,26 @@
             "description": "Café americano",
             "price": "$5", 
             "type":  "drink",
-            "plus": 1
+            "value": 5
         },
         {
             "description": "Café con leche",
             "price": "$7",
             "type":  "drink" , 
-            "plus": 1
+            "value": 7
         },
         {
             "description": "Jugo de frutas natural",
             "price": "$7",
             "type":  "drink",
-            "plus": 1
+            "value": 7
         },
         
         {
             "description": "Sandwich de jamón y queso",
             "price": "$10",
             "type":  "food" ,
-            "plus": 1 
+            "value": 10 
         }]
     }, {
     "meal":[{
@@ -32,24 +32,28 @@
             
                 "description": "Hamburguesa simple",
                 "price": "$10",
-                "type":  "hamburger"     
+                "type":  "hamburger" , 
+                "value": 10   
                 
             },
             {
                 "description": "Hamburguesa doble",
                 "price": "$15",
-                "type":  "hamburger"   
+                "type":  "hamburger" ,
+                "value": 15  
             },
         
             {
                 "description": "Papas fritas",
                 "price": "$5",
-                "type":  "extra"    
+                "type":  "extra" ,
+                "value": 5   
             },
             {
                 "description": "Aros de cebolla",
                 "price": "$7",
-                "type":  "extra"    
+                "type":  "extra" ,
+                "value": 7   
             },
     
         
@@ -57,22 +61,30 @@
             {
                 "description": "Agua 500ml",
                 "price": "$5",
-                "type":  "drinks"     
+                "type":  "drinks"  ,
+                "value": 5
+               
             },
             {
                 "description": "Agua 750ml",
                 "price": "$7",
-                "type":  "drinks"       
+                "type":  "drinks",
+                "value": 7
+
             },
             {
                 "description": "Bebida/gaseosa 500ml",
                 "price": "$7",
-                "type":  "drinks"       
+                "type":  "drinks" ,
+                "value": 7
+
             },
             {
                 "description": "Bebida/gaseosa 750ml",
                 "price": "$10",
-                "type":  "drinks"       
+                "type":  "drinks" ,
+                "value": 10
+
             }
         
     ]

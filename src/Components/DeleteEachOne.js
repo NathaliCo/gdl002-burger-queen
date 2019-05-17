@@ -1,21 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 
-class DeleteEachOne extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      plus: 1,
-    };    
-  }
+const DeleteEachOne = props =>{
 
-render(){
   return(
-    <button>X</button>
+    <button onClick={props.action} className = {props.className}>X</button>
   )
 }
-
-}
-
 
 export default DeleteEachOne;

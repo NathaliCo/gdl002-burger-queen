@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './ButtonsMenu.css';
 import { menu } from '../menu.json';
 
-let who = "";
 class ButtonWaiter extends Component {
   constructor() {
     super();
@@ -10,7 +9,6 @@ class ButtonWaiter extends Component {
       waiter: menu[2].waiter,
       waiterWho: "",
       isHidden: true,
-      selected: menu[2].waiter[0]
     };
   };
   toggleHidden() {
@@ -19,11 +17,12 @@ class ButtonWaiter extends Component {
     })
   }
 
+  
   whoWaiter() {
     const theWaiter = (document.querySelector('input[name=radioWaiter]:checked').value);
     const whoWaiter = document.getElementsByClassName('theWaiter')[0];
     whoWaiter.innerHTML = theWaiter
-    who= theWaiter
+
     this.setState ({ 
       waiterWho: theWaiter
     });

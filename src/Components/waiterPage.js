@@ -1,28 +1,30 @@
 import React, { Component } from 'react';
 import  ButtonMenuBreakfast from './ButtonMenuBreakfast';
 import  ButtonMenuMeal from './ButtonMenuMeal';
-import  Command from './Command';
+import  SendToChef from './SendToChef';
 import  AddCommand from './AddCommand';
 
 class WaiterPage extends Component {
+    constructor(){
+        super();
+        this.state = {
+          command:[]
+        }
+        
+      }
     render(){
         return(
 <div className = "section group">
     <div className = "col span_1_of_2">
     <ButtonMenuBreakfast />
-     <ButtonMenuMeal />
+    <ButtonMenuMeal />
     </div>
     <div className = "col span_1_of_2">
-    <Command />
-    <AddCommand />
-    <div >
-    {/* <SomeComponent /> */}
-    {/* <FirestoreProvider {...config} firebase={firebase}> */}
-      <div>This is my app</div>
-    {/* </FirestoreProvider> */}
+    <AddCommand/>
+    <div>
     </div>
-    <button>Send command to chef</button> 
-    <button>Command states</button>
+    <button>States</button>
+    
     </div>
     </div>
         )
