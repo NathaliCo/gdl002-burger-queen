@@ -1,27 +1,20 @@
-import React, {Component} from 'react';
+import React from 'react';
+//import './App.css';
 import {BrowserRouter, Route} from 'react-router-dom'
-import './App.css';
-import  Header from './Components/Header';
-import WaiterPage from './Components/waiterPage';
-import ChefPage from './Components/ChefPage';
+import WaiterPage from './components/WaiterPage';
+import Header from './components/Header';
+import ChefPage from './components/ChefPage';
+import KitchenOrder from './components/KitchenOrder';
 
-
-
-class App extends Component {
-
-  
-render(){
+function App() {
   return (
     <BrowserRouter>
-    <Header />
-    <Route exact path= '/' component = {WaiterPage}/>
+     <Header />
+     <Route exact path= '/Waiter' component = {WaiterPage}/>
     <Route path = '/chef' component = {ChefPage}/>
     </BrowserRouter>
-  ); 
-}
+
+  );
 }
 
 export default App;
-
-
-

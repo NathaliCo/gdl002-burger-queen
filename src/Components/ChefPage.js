@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
-import Kitchen from './Kitchen';
+import KitchenOrder from './KitchenOrder';
+import {ProductProvider} from './Context'
+
 
 class ChefPage extends Component {
     render(){
         return (
+                <ProductProvider>
 <div className = "orders">Orders
-<Kitchen/>
+
+
 </div>
+</ProductProvider>
         )}
 }
 export default ChefPage;

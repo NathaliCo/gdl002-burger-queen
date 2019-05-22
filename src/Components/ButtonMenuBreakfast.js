@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-import './ButtonsMenu.css';
 import { menu } from '../menu.json';
-import ButtonMenu from './buttonMenu.js';
+import ProductList from './ProductList.js';
+import {ProductConsumer} from './Context'
+import Product from './Product';
+import './buttonsMenu.css';
 
-
-let actualcommand = [];
 class ButtonMenuBreakfast extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      command:[],
+     
       isHidden: true,
-    };    
+    };
   }
 
   toggleHidden() {
@@ -19,49 +19,31 @@ class ButtonMenuBreakfast extends React.Component {
       isHidden: !this.state.isHidden,
     })
   }
-  
 
-  addToCommand=(event)=> {
-    let target = event.currentTarget;
-    let key = target.getAttribute("name"); 
-    let addFood = document.getElementsByClassName('commands')[0];
-    const menuBreakfast = menu[0].breakfast
-    const menuObject = menuBreakfast[key];
-     actualcommand.push(menuObject)
-    this.setState ({ 
-      command: actualcommand
-    });
-    console.log(this.state.command)
-    addFood.innerHTML =""
-    actualcommand.map((item, i)=>{
-    addFood.innerHTML += `<div className = "order" onClick = ${this.handleIncrement(event)} extraClassName= ${i} key= ${i}> ${item.description}  /  ${item.price} / ${item.plus}</div>`
-    })
-    }
 
   render() {
-    const menuBreakfast = menu[0].breakfast
-    const breakfast = menuBreakfast.map((menu, i) => {
-      return (
-        
-        <button name={i} key={menu.description} className="buttonBreakfast" onClick={this.addToCommand}>
-          {menu.description}
-          <br />
-          {menu.price}
-        </button>
-      )
-    });
+  
     return (
-      
       <div className="menuTable">
         <button onClick={this.toggleHidden.bind(this)} >Breakfast Menu</button>
         {!this.state.isHidden && (
-          <p>{breakfast}</p>
+          <div><React.Fragment>
+          <div className = "menu">
+          <ProductConsumer>
+              {value=>{
+              return value.menuBreakfast.map(product =>{
+                 return  <Product key={product.id} product = 
+                 {product} />
+              })
+          }}
+          </ProductConsumer>
+          </div>
+          </React.Fragment></div>
         )}
       </div>
-
-
-    );
+    ); 
   }
-
 };
+
 export default ButtonMenuBreakfast
+
