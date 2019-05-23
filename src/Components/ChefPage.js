@@ -9,7 +9,6 @@ class ChefPage extends Component {
                 <ProductProvider>
 <div className = "orders">Orders
 
-
 </div>
 </ProductProvider>
         )}

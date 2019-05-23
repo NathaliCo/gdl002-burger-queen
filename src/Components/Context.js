@@ -1,8 +1,11 @@
 import firebase from '../firebase'
 import React, {Component} from 'react';
 import {menu} from '../menu.json'
-import Delete from './Delete';
+
 let actualcommand =[]
+let menuBreakfast =menu.filter(item=>(item.hour=="morning"))
+let menuMeal =menu.filter(item=>(item.hour=="evening"))
+
 
 const ProductContext = React.createContext();
 
@@ -11,8 +14,9 @@ class ProductProvider extends Component {
         super ();
       
     this.state = {
-        menuBreakfast: [],
-        menuMeal: [],
+        menuBreakfast: menuBreakfast,
+        menuMeal: menuMeal,
+        menu: [],
         order: [],
         cartClient:"",
         cartWaiter:"",
@@ -22,40 +26,52 @@ class ProductProvider extends Component {
 
 }
 
+
+writeKitchenData = ()=>{
+    let userRef = firebase.database().ref('orders');
+    userRef.child(
+   Date.now()).set(this.state.order)
+    console.log("saved")
+    let ref = firebase.database().ref('orders');
+        ref.on('value', snapshot => {
+          const order = snapshot.val();
+          console.log(order);
+        });
+}
+
 writeUserData = () => {
     firebase.database().ref('menu').set(menu);
-    console.log('DATA SAVED');
   }
 
   getUserData = () => {
     let ref = firebase.database().ref('menu');
     ref.on('value', snapshot => {
-      const state = snapshot.val();
-      this.setState(state);
-      console.log(state);
+      const menu = snapshot.val();
+      this.setState(menu);
+      console.log(menu);
     });
-   
-  }
+}
 componentDidMount(){
     this.setProducts();
     this.getUserData();
+   
+    
 }
 
 componentDidUpdate(prevProps, prevState){
 if (prevState != this.state){
     this.writeUserData();
+
 }
 }
 
 
 increment = (id)=>{
-   let tempCart= [...this.state.order];
+    let tempCart= [...this.state.order];
     const selectedProduct = tempCart.find(item=>item.id===id)
     const index = tempCart.indexOf(selectedProduct);
     const product = tempCart[index];
     product.count = product.count +1;
-console.log(product.count);
-console.log(product.value);
     product.total = product.count *product.value;
     this.setState(
         ()=>{
@@ -89,11 +105,11 @@ decrement =(id)=>{
     
 
 remove = (id)=>{
-   let tempProducts = [...this.state.menuBreakfast];
+   let tempProducts = [...this.state.menu];
    let tempCart = [...this.state.order];
    tempCart=tempCart.filter(item=>item.id !==id);  
    const index = this.getItem(id);
-   console.log(index);
+  
    let removedProduct = tempProducts[index];
    removedProduct.status = false;
    removedProduct.count = 0;
@@ -102,7 +118,7 @@ remove = (id)=>{
    this.setState(()=>{
        return {
            order: [...tempCart],
-           menuBreakfast: [...tempProducts]
+           menu: [...tempProducts]
        }
    },()=>{
        this.addTotals();
@@ -131,50 +147,38 @@ addTotals =()=>{ let total=0;
 }
     setProducts = ()=>{
 
-        let tempMenuMeal = [];
-        let tempMenuBreakfast = [];
-         menu[0].breakfast.forEach(item=>{
+       
+        let tempMenu = [];
+         menu.forEach(item=>{
             const singleItem ={...item};
-            tempMenuBreakfast = [...tempMenuBreakfast,singleItem]
+            tempMenu = [...tempMenu,singleItem]
         })
-        menu[1].meal.forEach(item=>{
-            const singleItem ={...item};
-            tempMenuMeal = [...tempMenuMeal,singleItem]
-        })
+       
         this.setState({
-            menuBreakfast: tempMenuBreakfast,
-            menuMeal:  tempMenuMeal
+            menu: tempMenu,
+           
           });
     }
 getItem = (id) =>{
-    let product = this.state.menuBreakfast.find(item=> item.id ===id).id
+    let product = this.state.menu.find(item=> item.id ===id).id
    return product
 }
 addToCart = (id)=>{
-     let tempProducts = this.state.menuBreakfast
+     let tempProducts = this.state.menu
      const index = this.getItem(id);
      const product = tempProducts[index]
      product.status = true;
      product.count = 1;
     const price = product.value;
-    console.log(price)
+    
     product.total = price;
-    console.log(product.total)
+    
     actualcommand.push(product);
     this.setState(()=>{
-        return {menuBreakfast: tempProducts, order:[...this.state.order, product] };
+        return {menu: tempProducts, order:[...this.state.order, product] };
     },()=>{this.addTotals();});  
 }
 
-printOrder = ()=>{
-    let addFood = document.getElementsByClassName('order')[0];
-    
-    addFood.innerHTML = "";
-    actualcommand.map((item, i)=>{
-        let action= ()=> this.remove(i);
-         addFood.innerHTML +=  `<div className = "order" key= ${i}> ${item.count}/${item.description}  / ${item.value}</div>`+ `<Delete name="Delete" action= ${action} index=${i}>`+"Delete"+`</Delete>`
-                })
-}
     render (){
         return (
         <ProductContext.Provider value = {{
@@ -186,6 +190,7 @@ printOrder = ()=>{
             decrement: this.decrement,
             remove: this.remove,
             clear: this.clear,
+            writeKitchenData: this.writeKitchenData 
         }}>
             {this.props.children}
         </ProductContext.Provider>

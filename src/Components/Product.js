@@ -8,7 +8,6 @@ import KitchenOrder from './KitchenOrder';
 
 export default function  Product ({product, value}) {
         const {img, description, price, id }=product;
-console.log(value)
         return (
             <div className = "card">
                   <ProductConsumer>

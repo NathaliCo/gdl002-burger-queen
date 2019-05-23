@@ -16,13 +16,14 @@ class ButtonMenuMeal extends React.Component {
     this.setState({
       isHidden: !this.state.isHidden,
     })
+    
   }
    
   render() {
     return (
 
       <div className="menuTable">
-        <button onClick={this.toggleHidden.bind(this)} >Meal Menu</button>
+        <button name="meal" onClick={this.toggleHidden.bind(this)} >Meal Menu</button>
         {!this.state.isHidden && (
           <div><React.Fragment>
           <div className = "menu">

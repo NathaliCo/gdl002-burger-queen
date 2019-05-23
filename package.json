@@ -1,16 +1,20 @@
 {
-  "name": "burguer-queen-react",
+  "name": "gdl002-burger-queen",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://nathalis.github.io/gdl002-burger-queen/",
   "dependencies": {
-    "babel-jest": "^24.8.0",
-    "firebase": "^6.0.2",
+    "@react-firebase/database": "^0.3.10",
+    "gh-pages": "^2.0.1",
+    "re-base": "^4.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.1"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -30,6 +34,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {}
+  }
 }
