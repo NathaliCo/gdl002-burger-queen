@@ -22,7 +22,7 @@ class ButtonMenuBreakfast extends React.Component {
   render() {
     return (
       <div className="menuTable">
-        <button name="breakfast" onClick={this.toggleHidden.bind(this)}>
+        <button name="breakfast" className= "btn btn-primary"onClick={this.toggleHidden.bind(this)}>
           Breakfast Menu
         </button>
         {!this.state.isHidden && (

@@ -31,7 +31,8 @@
 	width: 100%;
 }
 .span_1_of_2 {
-	width: 49.2%;
+  width: 49.2%;
+  
 }
 
 /*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
@@ -56,6 +57,13 @@
 font-size: 1.5rem;
 }
 
-.order{
-background-color: dimgray
+.col2{
+background-color: dimgray;
+text-align: center;
+}
+
+p{
+font-size: 3rem;
+font-weight: bold;
+ align-content: center;
 }

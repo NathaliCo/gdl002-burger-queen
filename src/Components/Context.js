@@ -28,11 +28,11 @@ class ProductProvider extends Component {
 
 
 writeKitchenData = ()=>{
-    let userRef = firebase.database().ref('orders');
-    userRef.child(
+    let orderRef = firebase.database().ref('order');
+    orderRef.child(
    Date.now()).set(this.state.order)
     console.log("saved")
-    let ref = firebase.database().ref('orders');
+    let ref = firebase.database().ref('order');
         ref.on('value', snapshot => {
           const order = snapshot.val();
           console.log(order);
@@ -54,6 +54,7 @@ writeUserData = () => {
 componentDidMount(){
     this.setProducts();
     this.getUserData();
+    this.writeKitchenData();
    
     
 }

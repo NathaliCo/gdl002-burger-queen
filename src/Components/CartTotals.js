@@ -5,9 +5,9 @@ export default function CartTotals({value}) {
     return (
         <React.Fragment>
             <div>
-                <button className = "clear" onClick = {()=>clear()}>clear
+                <button className = "btn btn-primary active" onClick = {()=>clear()}>Clear
                 </button>
-            <button className ="send" onClick = {()=>writeKitchenData()}>Sent
+            <button className ="btn btn-primary " onClick = {()=>writeKitchenData()}>Send
 
             </button>
             </div>

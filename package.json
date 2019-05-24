@@ -2,7 +2,7 @@
   "name": "gdl002-burger-queen",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://nathalis.github.io/gdl002-burger-queen/",
+  "homepage": "https://nathaliCo.github.io/gdl002-burger-queen/",
   "dependencies": {
     "@react-firebase/database": "^0.3.10",
     "gh-pages": "^2.0.1",

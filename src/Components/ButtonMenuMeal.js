@@ -23,7 +23,7 @@ class ButtonMenuMeal extends React.Component {
     return (
 
       <div className="menuTable">
-        <button name="meal" onClick={this.toggleHidden.bind(this)} >Meal Menu</button>
+        <button className= "btn btn-primary" name="meal" onClick={this.toggleHidden.bind(this)} >Meal Menu</button>
         {!this.state.isHidden && (
           <div><React.Fragment>
           <div className = "menu">

@@ -19,7 +19,7 @@ class SendToChef extends Component {
 
   render(){
         return(
-            <button className = "" onClick = {this.getKitchenData}  >Send to chef</button> 
+            <button className = "btn btn-secondary active" onClick = {this.getKitchenData}  >Send to chef</button> 
         )
     
 }
