@@ -59,19 +59,33 @@ writeKitchenData = ()=>{
     orderRef.child(
    Date.now()).set(this.state.order)
     console.log("saved")
+    
     let ref = firebase.database().ref('order');
         ref.on('value', snapshot => {
-          const newState = snapshot.val();
+          const newState = this.snapshotToArray(snapshot);
           console.log(newState)
           this.setState({
             orderInKitchen:newState
-        },()=>{console.log(this.state.orderInKitchen)})
+        }
+        // ,
+        // ()=>{console.log(this.state.orderInKitchen)}
+        )
 
         });
         
 }
 
+snapshotToArray = (snapshot)=>{
+    var returnArr = [];
+    snapshot.forEach(function(childSnapshot) {
+        var item = childSnapshot.val();
+        item.key = childSnapshot.key;
 
+        returnArr.push(item);
+    });
+
+    return returnArr;
+}
 
     
 increment = (id)=>{

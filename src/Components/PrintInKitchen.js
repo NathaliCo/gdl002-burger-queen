@@ -13,6 +13,7 @@ export default class PrintInKitchen extends Component {
     return (
         <section className = "">
             <KitchenList value = {value}/>
+            
             </section>
     );
 }}

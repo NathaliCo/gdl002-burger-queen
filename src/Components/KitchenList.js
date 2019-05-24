@@ -5,16 +5,16 @@ import KitchenItem from './KitchenItem';
 
 export default function KitchenList({value}) {
     const {orderInKitchen}=value
-    console.log(orderInKitchen)
+    //console.log(orderInKitchen)
     
     return (
         <div className= "container-table">
              {orderInKitchen.map(item=>{
-        return <KitchenItem key= {item.description}/>
+             return <KitchenItem key= {item.description}  item = {item} value = {value}/>
+             
       })}
             
         </div>
     )
 }
-
 
