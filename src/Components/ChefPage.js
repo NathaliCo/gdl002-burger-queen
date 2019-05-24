@@ -4,17 +4,13 @@ import {ProductProvider} from './Context'
 import firebase from '../firebase'
 import PrintInKitchen from './PrintInKitchen'
 
+export default function ChefPage() {
+    return (
+        <section>
+            <ProductProvider>
+                <PrintInKitchen/>
+                </ProductProvider>
+        </section>
 
-class ChefPage extends Component {
-    render(){
-        return (
-               <React.Fragment>
-<h2 className = "orders">Orders
-
-</h2>
-{/* <div><PrintInKitchen/></div> */}
-
-</React.Fragment>
-        )}
+    )
 }
-export default ChefPage;

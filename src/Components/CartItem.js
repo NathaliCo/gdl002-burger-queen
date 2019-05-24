@@ -11,7 +11,7 @@ export default function CartItem({item, value}) {
       <h1>{count} {description} {price} {date} {client} {waiter} </h1>
       <img className = "card-img-top" src= {img} ></img>
       <section>
-<div class = "buttonsOptions">
+<div className = "buttonsOptions">
 <button className = "options btn-primary"onClick={()=>
 decrement(id)}>-</button>
 <button className = "options btn-primary"onClick={()=>

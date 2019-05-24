@@ -32,7 +32,7 @@
 }
 .span_1_of_2 {
   width: 49.2%;
-  
+  border-radius: 3rem;
 }
 
 /*  GO FULL WIDTH AT LESS THAN 480 PIXELS */

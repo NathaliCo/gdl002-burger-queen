@@ -2,6 +2,7 @@ import firebase from '../firebase'
 import React, {Component} from 'react';
 import {menu} from '../menu.json'
 
+let newState =[]
 let actualcommand =[]
 let menuBreakfast =menu.filter(item=>(item.hour=="morning"))
 let menuMeal =menu.filter(item=>(item.hour=="evening"))
@@ -21,23 +22,12 @@ class ProductProvider extends Component {
         cartClient:"",
         cartWaiter:"",
         cartDate: Date.now(),
-        cartTotal: 0
+        cartTotal: 0,
+        orderInKitchen:[]
     }
 
 }
 
-
-writeKitchenData = ()=>{
-    let orderRef = firebase.database().ref('order');
-    orderRef.child(
-   Date.now()).set(this.state.order)
-    console.log("saved")
-    let ref = firebase.database().ref('order');
-        ref.on('value', snapshot => {
-          const order = snapshot.val();
-          console.log(order);
-        });
-}
 
 writeUserData = () => {
     firebase.database().ref('menu').set(menu);
@@ -55,18 +45,35 @@ componentDidMount(){
     this.setProducts();
     this.getUserData();
     this.writeKitchenData();
-   
-    
 }
 
 componentDidUpdate(prevProps, prevState){
 if (prevState != this.state){
     this.writeUserData();
-
 }
 }
+//TODO: Convert firebase data into an array
+//Upload order to firebase and save in state.
+writeKitchenData = ()=>{
+    let orderRef = firebase.database().ref('order');
+    orderRef.child(
+   Date.now()).set(this.state.order)
+    console.log("saved")
+    let ref = firebase.database().ref('order');
+        ref.on('value', snapshot => {
+          const newState = snapshot.val();
+          console.log(newState)
+          this.setState({
+            orderInKitchen:newState
+        },()=>{console.log(this.state.orderInKitchen)})
+
+        });
+        
+}
 
 
+
+    
 increment = (id)=>{
     let tempCart= [...this.state.order];
     const selectedProduct = tempCart.find(item=>item.id===id)

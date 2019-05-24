@@ -7,8 +7,8 @@ class Header extends Component {
         <div className="header">
           <h1>Burguer Queen</h1>
           <div className = "buttonsWho">
-             <Link exact to= '/Waiter'><button Link className="btn btn-secondary active">Waiter</button></Link>
-             <Link  to= '/chef'><button className="btn btn-secondary">Chef</button></Link>
+             <Link className="btn btn-secondary active" to= '/Waiter'>Waiter</Link>
+             <Link className="btn btn-secondary" to= '/chef'>Chef</Link>
             {/* <Link  to= "/"><button className="btn btn-secondary">Owner</button></Link> */}
           </div>
         </div>
