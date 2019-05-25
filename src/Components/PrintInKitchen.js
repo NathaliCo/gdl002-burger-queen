@@ -9,11 +9,12 @@ export default class PrintInKitchen extends Component {
             <React.Fragment>
                 <ProductConsumer>
 {value =>{
-    const {orderInKitchen}= value;
+    const {orderInKitchen, ready}= value;
+    
+    
     return (
         <section className = "">
             <KitchenList value = {value}/>
-            
             </section>
     );
 }}

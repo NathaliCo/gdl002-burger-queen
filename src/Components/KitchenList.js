@@ -4,7 +4,7 @@ import KitchenItem from './KitchenItem';
 
 
 export default function KitchenList({value}) {
-    const {orderInKitchen}=value
+    const {orderInKitchen, getItem, ready}=value
     //console.log(orderInKitchen)
     
     return (

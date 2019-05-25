@@ -19,15 +19,6 @@ function WaiterPage() {
             <span className="typeMenu" name="" />
             <div className="order">
               <KitchenOrder />
-              {/* <ProductConsumer>
-                {value=>{
-                    const {sentToChef}=value
-                return (
-                <SendToChef value = {value}/>
-                )
-                }}
-                 </ProductConsumer> */}
-              
             </div>
           </div>
         </div>

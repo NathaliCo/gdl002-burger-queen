@@ -10,7 +10,8 @@
             "hour": "morning",
             "status": false,
             "count":0,
-            "total":0
+            "total":0,
+            "ready": false
         },
         {
             "id": 1,
@@ -22,7 +23,8 @@
             "hour": "morning",
             "status": false,
             "count":0,
-            "total":0
+            "total":0,
+            "ready": false
         },
         {
             "id": 2,
@@ -34,7 +36,8 @@
             "hour": "morning",
             "status": false,
             "count":0,
-            "total":0
+            "total":0,
+            "ready": false
         },
         
         {
@@ -47,7 +50,8 @@
             "hour": "morning",
             "status": false,
             "count":0,
-            "total":0
+            "total":0,
+            "ready": false
         
     }, {
    
@@ -60,7 +64,8 @@
                 "hour": "evening",
                 "status": false,  
                 "count":0,
-                "total":0
+                "total":0,
+                "ready": false
             },
             {
                 "id": 5,
@@ -72,7 +77,8 @@
                 "hour": "evening",
                 "status": false ,
                 "count":0,
-                "total":0
+                "total":0,
+                "ready": false
             },
         
             {
@@ -85,7 +91,8 @@
                 "hour": "evening",
                 "status": false,
                 "count":0,
-                "total":0  
+                "total":0,
+                "ready": false  
             },
             {
                 "id": 7,
@@ -97,7 +104,8 @@
                 "hour": "evening",
                 "status": false,
                 "count":0,
-                "total":0   
+                "total":0,
+                "ready": false   
             },
             {
                 "id": 8,
@@ -109,7 +117,8 @@
                 "hour": "evening",
                 "status": false,
                 "count":0,
-                "total":0
+                "total":0,
+                "ready": false
             },
             {
                 "id": 9,
@@ -121,7 +130,8 @@
                 "hour": "evening",
                 "status": false,
                 "count":0,
-                "total":0
+                "total":0,
+                "ready": false
             },
             {
                 "id": 10,
@@ -133,7 +143,8 @@
                 "hour": "evening",
                 "status": false,
                 "count":0,
-                "total":0
+                "total":0,
+                "ready": false
             },
             {
                 "id": 11,
@@ -145,7 +156,8 @@
                 "hour": "evening",
                 "status": false,
                 "count":0,
-                "total":0
+                "total":0,
+                "ready": false
             }
          
     

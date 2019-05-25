@@ -148,6 +148,23 @@ remove = (id)=>{
    )
 }
 
+ready = (id)=>{
+    let makingProducts = [...this.state.orderInKitchen];
+    console.log(makingProducts)
+    const index = this.getItem(id);
+    console.log(index)
+    let makedProduct=makingProducts[index];
+    console.log(makedProduct)
+    makedProduct.ready= true;
+    this.setState(()=>{
+        return {
+            order:[...makingProducts]
+        }
+        })
+console.log(this.state.order);
+
+}
+
 clear = () =>{
     this.setState (()=>{
         return {order:[]}
@@ -183,7 +200,7 @@ addTotals =()=>{ let total=0;
     }
 getItem = (id) =>{
     let product = this.state.menu.find(item=> item.id ===id).id
-   return product
+    return product
 }
 addToCart = (id)=>{
      let tempProducts = this.state.menu
@@ -212,7 +229,8 @@ addToCart = (id)=>{
             decrement: this.decrement,
             remove: this.remove,
             clear: this.clear,
-            writeKitchenData: this.writeKitchenData 
+            writeKitchenData: this.writeKitchenData, 
+            ready: this.ready
         }}>
             {this.props.children}
         </ProductContext.Provider>
