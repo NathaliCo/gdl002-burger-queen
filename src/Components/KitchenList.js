@@ -4,17 +4,19 @@ import KitchenItem from './KitchenItem';
 
 
 export default function KitchenList({value}) {
-    const {orderInKitchen, getItem, ready}=value
-    //console.log(orderInKitchen)
+    const {orderInKitchen}=value
     
     return (
         <div className= "container-table">
              {orderInKitchen.map(item=>{
-             return <KitchenItem key= {item.description}  item = {item} value = {value}/>
-             
+             return (
+                 <React.Fragment>
+             <KitchenItem key= {item.key}  item = {item} value = {value}/>
+             Client: {item.client} /Waiter: {item.waiter}
+            </React.Fragment>
+             )
       })}
             
         </div>
     )
 }
-

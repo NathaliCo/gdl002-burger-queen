@@ -19,9 +19,8 @@ class ProductProvider extends Component {
         menuMeal: menuMeal,
         menu: [],
         order: [],
-        orderClient: [],
-        orderWaiter:[],
-        
+        cartClient:"",
+        cartWaiter:"",
         cartDate: Date.now(),
         cartTotal: 0,
         orderInKitchen:[]
@@ -29,12 +28,6 @@ class ProductProvider extends Component {
 
 }
 
-handleInput=(e)=>{
-    const { value, name}= e.target;
-    this.setState({
-     [name]:value
-     })
-}
 
 writeUserData = () => {
     firebase.database().ref('menu').set(menu);
@@ -52,7 +45,6 @@ componentDidMount(){
     this.setProducts();
     this.getUserData();
     this.writeKitchenData();
-    
 }
 
 componentDidUpdate(prevProps, prevState){
@@ -61,72 +53,14 @@ if (prevState != this.state){
 }
 }
 //TODO: Convert firebase data into an array
-//Upload order to firebase and save in state.
-changeOrder(){
-    let client ="none"
-    let waiter ="none"
-    let done = false
-    let order =this.state.order
-     let actualOrder=[
-        client = client,
-        waiter=waiter,
-        done=done,
-        order= [
-        order
-     ]]
-     return (actualOrder)
-}
-// writeKitchenData = (event)=>{
-//     event.preventDefault()
-// let actualOrder=this.changeOrder();
-    
-//     let orderRef = firebase.database().ref('order');
-//     orderRef.child(
-//    Date.now()).set(actualOrder)
-//     console.log("saved")
-    
-//     let ref = firebase.database().ref('order');
-//         ref.on('value', snapshot => {
-//           const newState = this.snapshotToArray(snapshot);
-         
-//           this.setState({
-//             orderInKitchen:newState
-//         }, ()=>{console.log(this.state.orderInKitchen)}
-//         )
-
-//         });
-        
-// }
-
-// writeKitchenData = ()=>{
-//     let orderRef = firebase.database().ref('order');
-//     orderRef.child(
-//    Date.now()).set(this.state.order)
-//     console.log("savedDO")
-    
-//     let ref = firebase.database().ref('order');
-//         ref.on('value', snapshot => {
-//           const newState = this.snapshotToArray(snapshot);
-//           console.log(newState)
-//           this.setState({
-//             orderInKitchen:newState
-//         }
-//         // ,
-//         // ()=>{console.log(this.state.orderInKitchen)}
-//         )
-
-//         });
-        
-// }
-
 writeKitchenData = ()=>{
     let orderRef = firebase.database().ref('order');
     orderRef.child(
    Date.now()).set(
        {
-       client: this.state.orderClient,
-       waiter:this.state.orderWaiter,
-      
+       client: "None",
+       waiter:"None",
+       done:false,
        order: [
         this.state.order
        ]
@@ -148,6 +82,28 @@ writeKitchenData = ()=>{
         });
         
 }
+//Upload order to firebase and save in state.
+writeKitchenData = ()=>{
+    let orderRef = firebase.database().ref('order');
+    orderRef.child(
+   Date.now()).set(this.state.order)
+    console.log("saved")
+    
+    let ref = firebase.database().ref('order');
+        ref.on('value', snapshot => {
+          const newState = this.snapshotToArray(snapshot);
+          console.log(newState)
+          this.setState({
+            orderInKitchen:newState
+        }
+        // ,
+        // ()=>{console.log(this.state.orderInKitchen)}
+        )
+
+        });
+        
+}
+
 snapshotToArray = (snapshot)=>{
     var returnArr = [];
     snapshot.forEach(function(childSnapshot) {
@@ -221,19 +177,20 @@ remove = (id)=>{
    )
 }
 
-ready = (key)=>{
+ready = (id)=>{
     let makingProducts = [...this.state.orderInKitchen];
-    const index = this.state.menu.find(item=> item.key ===key).key;
+    console.log(makingProducts)
+    const index = this.getItem(id);
     console.log(index)
-//     let makedProduct=makingProducts[index];
-//     console.log(makedProduct)
-//     makedProduct.ready= true;
-//     this.setState(()=>{
-//         return {
-//             order:[...makingProducts]
-//         }
-//         })
-// console.log(this.state.order);
+    let makedProduct=makingProducts[index];
+    console.log(makedProduct)
+    makedProduct.ready= true;
+    this.setState(()=>{
+        return {
+            order:[...makingProducts]
+        }
+        })
+console.log(this.state.order);
 
 }
 
@@ -302,8 +259,7 @@ addToCart = (id)=>{
             remove: this.remove,
             clear: this.clear,
             writeKitchenData: this.writeKitchenData, 
-            ready: this.ready,
-            handleInput: this.handleInput
+            ready: this.ready
         }}>
             {this.props.children}
         </ProductContext.Provider>
@@ -313,3 +269,19 @@ addToCart = (id)=>{
 
 const ProductConsumer = ProductContext.Consumer;
 export {ProductConsumer, ProductProvider};
+ 
+
+//CREATE
+        const dbRefOrder = firebase.database().ref();
+        const orderRef = dbRefOrder.child('pruebasFirebase');
+        orderRef.set([
+            {
+             date_of_birth: "JunDSe 23, 1912",
+             full_name: "44444"
+           },
+            {
+             date_of_birth: "December 9, 1906",
+             full_name: "77777"
+           }
+       ]);
+    }

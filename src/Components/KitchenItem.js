@@ -1,30 +1,19 @@
 import React from 'react'
+import KitchenEachFood from './KitchenEachFood';
 
 export default function KitchenItem({item, value}) {
     const {id, description, img, price, total, count, date, client, waiter}= item;
     const {ready} = value
- 
+// console.log(item.order)
 
-    // ready = (id)=>{
-    //     let makingProducts = [...this.state.order];
-    //     const index = this.getItem(id);
-    //     let makedProduct=makingProducts[index];
-    //     makedProduct.rady= true;
-    //     this.setState(()=>{
-    //         return {
-    //             order:[...makingProducts]
-    //         }
-    //         })
-    // console.log(this.state.order);
-    
-    // }
     return (
         <section>
-         {item.map(element=>{
+         {item.order.map(element=>{
+           
        let  id=element.id
-         return <div key ={id}> {element.description} {element.count}
-            <button  className = "options btn-primary" onClick = {()=>ready(id)}>Ready</button>
-            </div>
+       console.log(element)
+       //console.log(element.description)
+         return <KitchenEachFood item={element} value={value}/>
          })}
    
         

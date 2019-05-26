@@ -4,6 +4,7 @@ import ButtonMenuBreakfast from "./ButtonMenuBreakfast";
 import ButtonMenuMeal from "./ButtonMenuMeal";
 import "./waiterPage.css";
 import KitchenOrder from "./KitchenOrder";
+import ClientName from "./ClientName";
 
 function WaiterPage() {
   return (
@@ -16,6 +17,9 @@ function WaiterPage() {
           </div>
           <div className="col col2 span_1_of_2">
             <p>Order</p>
+          <ClientName/>
+            
+            
             <span className="typeMenu" name="" />
             <div className="order">
               <KitchenOrder />

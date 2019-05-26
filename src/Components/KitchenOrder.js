@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-
-
  import {ProductConsumer} from './Context';
 // import Product from './Product';
  import CartList from './CartList';
