@@ -12,7 +12,8 @@ export default function KitchenItem({item, value}) {
       
        //console.log(element.description)
          return <div key ={description}> {food.description} {food.count}
-            <button  className = "options btn-primary" onClick = {()=>ready(id)}>Ready</button>
+         
+           
             </div>
          })}
    

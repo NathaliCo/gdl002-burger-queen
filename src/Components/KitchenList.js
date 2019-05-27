@@ -9,6 +9,7 @@ export default function KitchenList({value}) {
     return (
         <div className= "container-table">
              {orderInKitchen.map(item=>{
+
              return (
                  <React.Fragment>
              <KitchenItem key= {item.key}  item = {item} value = {value}/>
@@ -20,3 +21,5 @@ export default function KitchenList({value}) {
         </div>
     )
 }
+
+

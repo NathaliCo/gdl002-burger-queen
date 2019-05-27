@@ -21,7 +21,7 @@ class ProductProvider extends Component {
         order: [],
         orderClient: [],
         orderWaiter:[],
-        
+        orderDone :[],
         cartDate: Date.now(),
         cartTotal: 0,
         orderInKitchen:[]
@@ -76,48 +76,6 @@ changeOrder(){
      ]]
      return (actualOrder)
 }
-// writeKitchenData = (event)=>{
-//     event.preventDefault()
-// let actualOrder=this.changeOrder();
-    
-//     let orderRef = firebase.database().ref('order');
-//     orderRef.child(
-//    Date.now()).set(actualOrder)
-//     console.log("saved")
-    
-//     let ref = firebase.database().ref('order');
-//         ref.on('value', snapshot => {
-//           const newState = this.snapshotToArray(snapshot);
-         
-//           this.setState({
-//             orderInKitchen:newState
-//         }, ()=>{console.log(this.state.orderInKitchen)}
-//         )
-
-//         });
-        
-// }
-
-// writeKitchenData = ()=>{
-//     let orderRef = firebase.database().ref('order');
-//     orderRef.child(
-//    Date.now()).set(this.state.order)
-//     console.log("savedDO")
-    
-//     let ref = firebase.database().ref('order');
-//         ref.on('value', snapshot => {
-//           const newState = this.snapshotToArray(snapshot);
-//           console.log(newState)
-//           this.setState({
-//             orderInKitchen:newState
-//         }
-//         // ,
-//         // ()=>{console.log(this.state.orderInKitchen)}
-//         )
-
-//         });
-        
-// }
 
 writeKitchenData = ()=>{
     let orderRef = firebase.database().ref('order');
@@ -223,18 +181,18 @@ remove = (id)=>{
 
 ready = (key)=>{
     let makingProducts = [...this.state.orderInKitchen];
-    const index = this.state.menu.find(item=> item.key ===key).key;
+    const index = this.state.orderInKitchen.find(item=> item.key ===key);
     console.log(index)
-//     let makedProduct=makingProducts[index];
-//     console.log(makedProduct)
-//     makedProduct.ready= true;
-//     this.setState(()=>{
-//         return {
-//             order:[...makingProducts]
-//         }
-//         })
-// console.log(this.state.order);
-
+    let orderRef = firebase.database().ref('orderDone');
+    orderRef.child(
+   Date.now()).set(
+      index
+    )
+    console.log("saved")
+    
+    let ref = firebase.database().ref('order');
+    ref.child(index.key).remove();
+      
 }
 
 clear = () =>{
