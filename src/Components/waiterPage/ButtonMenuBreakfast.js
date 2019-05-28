@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ProductConsumer } from "./Context";
+import { ProductConsumer } from "../Context";
 import Product from "./Product";
 import "./buttonsMenu.css";
 
@@ -22,7 +22,11 @@ class ButtonMenuBreakfast extends React.Component {
   render() {
     return (
       <div className="menuTable">
-        <button name="breakfast" className= "btn btn-primary"onClick={this.toggleHidden.bind(this)}>
+        <button
+          name="breakfast"
+          className="btn btn-primary"
+          onClick={this.toggleHidden.bind(this)}
+        >
           Breakfast Menu
         </button>
         {!this.state.isHidden && (

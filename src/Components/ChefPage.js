@@ -1,20 +1,14 @@
-import React, { Component } from 'react';
-import KitchenOrder from './KitchenOrder';
-import {ProductProvider} from './Context'
-import firebase from '../firebase'
-import PrintInKitchen from './PrintInKitchen'
-
+import React, { Component } from "react";
+import { ProductProvider } from "./Context";
+import PrintInKitchen from "./chefPage/PrintInKitchen";
+import "./chefPage.css";
 
 export default function ChefPage() {
-
-
-    return (
-        <section>
-            <ProductProvider>
-                <PrintInKitchen/>
-                </ProductProvider>
-               
-        </section>
-
-    )
+  return (
+    <section className="chefPage">
+      <ProductProvider>
+        <PrintInKitchen />
+      </ProductProvider>
+    </section>
+  );
 }
