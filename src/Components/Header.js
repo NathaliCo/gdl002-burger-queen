@@ -11,7 +11,7 @@ class Header extends Component {
              <Link className="btn btn-secondary" to= '/chef'>Chef</Link>
             {/* <Link  to= "/"><button className="btn btn-secondary">Owner</button></Link> */}
           </div>
-        </div>
+       </div>
       );
     }
   } 

@@ -1,5 +1,6 @@
 import React from 'react'
 import KitchenItem from './KitchenItem';
+import './kitchenList.css'
 
 
 
@@ -11,10 +12,10 @@ export default function KitchenList({value}) {
              {orderInKitchen.map(item=>{
 
              return (
-                 <React.Fragment>
+                <span className="whoOrder"key= {item.key}  >
              <KitchenItem key= {item.key}  item = {item} value = {value}/>
              Client: {item.client} /Waiter: {item.waiter}
-            </React.Fragment>
+             </span> 
              )
       })}
             

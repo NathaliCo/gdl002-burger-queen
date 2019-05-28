@@ -6,7 +6,6 @@ import {ProductConsumer} from './Context';
 export default class ClientName  extends Component {
     
 render(){
-        console.log("in")
         return (
             <ProductConsumer>
 {value =>{

@@ -10,6 +10,7 @@ function WaiterPage() {
   return (
     <section>
       <ProductProvider>
+        <div className="alert"></div>
         <div className="section group">
           <div className="col span_1_of_2">
             <ButtonMenuBreakfast />
@@ -18,8 +19,6 @@ function WaiterPage() {
           <div className="col col2 span_1_of_2">
             <p>Order</p>
           <ClientName/>
-            
-            
             <span className="typeMenu" name="" />
             <div className="order">
               <KitchenOrder />

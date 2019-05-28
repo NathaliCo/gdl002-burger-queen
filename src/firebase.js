@@ -16,13 +16,3 @@ import * as firebase from 'firebase';
 
   export default firebase;
 
-//   const database = firebase.database();
-// database.ref('menu')
-// .once('value')
-// .then((snapshot) => {
-//     const val = snapshot.val();
-//     console.log(val);
-// })
-// .catch((e) => {
-//     console.log('Error fetching data', e)
-// })

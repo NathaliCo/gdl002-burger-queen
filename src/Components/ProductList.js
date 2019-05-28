@@ -5,7 +5,6 @@ import Product from './Product';
 
 export default class Button extends Component {
 render(){
-    //console.log(this.state.products);
 
 return (
 <React.Fragment>

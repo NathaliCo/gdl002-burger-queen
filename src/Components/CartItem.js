@@ -4,7 +4,6 @@ import './CartItem.css'
 export default function CartItem({item, value}) {
  const {id, description, img, price, total, count, date, client, waiter}= item;
  const {increment, decrement, remove} =value
- console.log(value) 
 
  return (
     <div>

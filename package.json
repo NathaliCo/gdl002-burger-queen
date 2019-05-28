@@ -5,9 +5,14 @@
   "homepage": "https://nathaliCo.github.io/gdl002-burger-queen/",
   "dependencies": {
     "@react-firebase/database": "^0.3.10",
+    "firebase": "^6.0.4",
+    "firebase-admin": "^8.0.0",
+    "firebase-functions": "^2.3.1",
     "gh-pages": "^2.0.1",
+    "http2": "^3.3.7",
     "re-base": "^4.0.0",
     "react": "^16.8.6",
+    "react-alert-template-basic": "^1.0.0",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.1"
