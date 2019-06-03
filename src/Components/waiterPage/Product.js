@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { ProductConsumer, ProductProvider } from "../Context";
+import React from "react";
+import { ProductConsumer} from "../Context";
 
 export default function Product({ product, value }) {
   const { img, description, price, id } = product;

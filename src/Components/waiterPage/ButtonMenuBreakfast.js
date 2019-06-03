@@ -3,7 +3,7 @@ import { ProductConsumer } from "../Context";
 import Product from "./Product";
 import "./buttonsMenu.css";
 
-class ButtonMenuBreakfast extends React.Component {
+class ButtonMenuBreakfast extends Component {
   constructor(props) {
     super(props);
     this.state = {

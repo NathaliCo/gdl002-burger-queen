@@ -9,8 +9,6 @@ export default class KitchenOrder extends Component {
       <React.Fragment>
         <ProductConsumer>
           {value => {
-            const { order } = value;
-
             return (
               <section className="kitchenOrder">
                 <CartList value={value} />

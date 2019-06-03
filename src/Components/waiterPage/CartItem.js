@@ -7,7 +7,6 @@ export default function CartItem({ item, value }) {
     description,
     img,
     price,
-    total,
     count,
     date,
     client,
@@ -20,8 +19,8 @@ export default function CartItem({ item, value }) {
       <h1>
         {count} {description} {price} {date} {client} {waiter}{" "}
       </h1>
-      <img className="card-img-top" src={img} />
-      <section>
+      <img alt="product" className="card-img-top" src={img} />
+      <section key={date}>
         <div className="buttonsOptions">
           <button className="options btn-primary" onClick={() => decrement(id)}>
             -

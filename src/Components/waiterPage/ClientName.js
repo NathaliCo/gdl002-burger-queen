@@ -6,7 +6,7 @@ export default class ClientName extends Component {
     return (
       <ProductConsumer>
         {value => {
-          const { handleInput, orderWaiter, orderClient } = value;
+          const { handleInput } = value;
 
           return (
             <div>

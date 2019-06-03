@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { ProductProvider } from "./Context";
 import PrintInKitchen from "./chefPage/PrintInKitchen";
 import "./chefPage.css";
