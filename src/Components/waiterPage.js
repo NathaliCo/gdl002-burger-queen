@@ -5,10 +5,12 @@ import ButtonMenuMeal from "./waiterPage/ButtonMenuMeal";
 import "./waiterPage.css";
 import KitchenOrder from "./waiterPage/KitchenOrder";
 import ClientName from "./waiterPage/ClientName";
+import backgroundHead from "./assets/backgroundHead.jpg"
 
 function WaiterPage() {
   return (
     <section>
+        <img className='bg' src={backgroundHead} />
       <ProductProvider>
         <div className="alert" />
         <div className="section group">

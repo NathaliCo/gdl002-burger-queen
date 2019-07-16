@@ -29,7 +29,7 @@
         {
             "id": 2,
             "img": "https://www.ecestaticos.com/imagestatic/clipping/fa0/37c/fa037c2956c21aca9bacb8ba30dc05ad/no-te-enganes-el-zumo-no-es-fruta-ni-aunque-lo-exprimas-en-tu-casa.jpg?mtime=1520612437",
-            "description": "Jugo de frutas natural",
+            "description": "Jugo de frutas",
             "price": "$7",
             "type":  "drink",
             "value": 7,
@@ -43,7 +43,7 @@
         {
             "id": 3,
             "img": "https://www.bimbo.com.mx/sites/default/files/recipe/Receta-Sandwich-de-pollo-a-la-mostaza-Bimbo.jpg",            
-            "description": "Sandwich de jamón y queso",
+            "description": "Sandwich jamón c/ queso",
             "price": "$10",
             "type":  "food" ,
             "value": 10 ,

@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
-import WaiterPage from "./components/WaiterPage";
-import Header from "./components/Header";
-import ChefPage from "./components/ChefPage";
+import WaiterPage from "./Components/waiterPage";
+import Header from "./Components/Header";
+import ChefPage from "./Components/ChefPage";
 
 function App() {
   return (

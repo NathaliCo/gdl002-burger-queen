@@ -8,12 +8,12 @@ export default function Product({ product, value }) {
       <ProductConsumer>
         {value => (
           <div
-            className="img-container p-5"
+            className="img-container "
             onClick={() => {
               value.addToCart(id);
             }}
           >
-            <img src={img} alt="product" className="card-img-top" />
+            <img src={img} alt="product" className="cardImg" />
             {description}
             {price}
           </div>

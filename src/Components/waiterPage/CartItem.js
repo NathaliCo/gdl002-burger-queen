@@ -16,12 +16,12 @@ export default function CartItem({ item, value }) {
 
   return (
     <div>
-      <h1>
-        {count} {description} {price} {date} {client} {waiter}{" "}
-      </h1>
-      <img alt="product" className="card-img-top" src={img} />
+      <section className="eachItem">
       <section key={date}>
         <div className="buttonsOptions">
+        <span>
+        {count} {description} {price} {date} {client} {waiter}{" "}
+      </span>
           <button className="options btn-primary" onClick={() => decrement(id)}>
             -
           </button>
@@ -29,9 +29,10 @@ export default function CartItem({ item, value }) {
             +
           </button>
           <button className="options btn-primary" onClick={() => remove(id)}>
-            delete
+            del
           </button>
         </div>
+        </section>
       </section>
     </div>
   );

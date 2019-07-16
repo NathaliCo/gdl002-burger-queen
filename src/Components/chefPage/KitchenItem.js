@@ -16,7 +16,7 @@ export default function KitchenItem({ item, value }) {
           <span key={key + total}>
             <button
             key={key+client}
-              className="options btn btn-primary"
+              className="optionReady btn btn-primary"
               onClick={() => ready(key)}
             >
               Ready

@@ -6,7 +6,7 @@ export default function KitchenList({ value }) {
   const { orderInKitchen } = value;
 
   return (
-    <div className="container-table">
+    <div className="container-table eachOrder">
       {orderInKitchen.map(item => {
         return (
           <span className="whoOrder" key={item.key}>

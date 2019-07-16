@@ -67,3 +67,7 @@ font-size: 3rem;
 font-weight: bold;
  align-content: center;
 }
+
+.img-container{
+  padding: 1rem;
+}

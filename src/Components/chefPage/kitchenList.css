@@ -1,3 +1,14 @@
 .whoOrder{
     font-size: 2rem;
 }
+
+.optionReady{
+    height: 3rem;
+    width: 5rem;
+}
+
+.eachOrder{
+    background-color: aliceblue;
+    width: 50%;
+    display: inline-block;
+}
