@@ -15,7 +15,7 @@
         },
         {
             "id": 1,
-            "img": "http://taipari.ecamarero.com/wp-content/uploads/2017/03/coffee_cafe_con_leche.jpg",
+            "img": "https://www.thespruceeats.com/thmb/z_lEmZwyWM6rfUSvlPXVbBblvo4=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/Cafeconleche-56fcf86e5f9b586195b73dbf.JPG",
             "description": "Café con leche",
             "price": "$7",
             "type":  "drink" , 
