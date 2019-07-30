@@ -7,7 +7,7 @@ class Header extends Component {
   render() {
     return (
       <div className="header">
-        <h1>Burguer Queen</h1>
+        <h1>Burger Queen</h1>
         <div className="buttonsWho">
           <Link className="btn btn-secondary active" to="/Waiter">
             Waiter
